@@ -1,0 +1,30 @@
+{
+  "name": "vuttr-back-end",
+  "version": "1.0.0",
+  "description": "back-end for vuttr application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoTorres/vuttr-back-end.git"
+  },
+  "keywords": [
+    "tools",
+    "tag",
+    "manager"
+  ],
+  "author": "Leonardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeonardoTorres/vuttr-back-end/issues"
+  },
+  "homepage": "https://github.com/LeonardoTorres/vuttr-back-end#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.16"
+  }
+}
