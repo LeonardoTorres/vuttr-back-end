@@ -14,7 +14,7 @@ This API was developed for demonstration purposes and was developed using:
 You need to have NodeJS, git and mongodb installed.  
 
 ## Running locally 
-> $ git clone https://github.com/LeonardoTorres/vuttr-back-end.git\
+> $ git clone https://github.com/LeonardoTorres/vuttr-back-end.git \
 > $ cd vuttr-back-end\
 > $ yarn\
 > $ yarn start:dev # run with nodemon\
