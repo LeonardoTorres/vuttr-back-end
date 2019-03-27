@@ -1,0 +1,102 @@
+FORMAT: 1A
+
+# tools-api
+Tools é uma simples API que permite gerenciar ferramentas úteis.
+
+# Group Tools
+
+## Tools [/tools{?tag}]
+### Listar todas as ferramentas [GET]
+Retorna uma lista de ferramentas. Quando o parâmetro tag for omitido, uma lista será retorna sem filtros
+
++ Parameters
+    + tag (optional, string, ``) ... Representa o nome da tag. Quando informado, as ferramentas serão filtradas por tag 
+    
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    id: 2,
+                    title: "json-server",
+                    link: "https://github.com/typicode/json-server",
+                    description: "Fake REST API based on a json schema. Useful for mocking and creating APIs for front-end devs to consume in coding challenges.",
+                    tags: [
+                        "api",
+                        "json",
+                        "schema",
+                        "node",
+                        "github",
+                        "rest"
+                    ]
+                },
+                {
+                    id: 3,
+                    title: "fastify",
+                    link: "https://www.fastify.io/",
+                    description: "Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.",
+                    tags: [
+                        "web",
+                        "framework",
+                        "node",
+                        "http2",
+                        "https",
+                        "localhost"
+                    ]
+                }
+            ]
+
+## Criar nova ferramenta [POST]
+Cria uma nova ferramenta. As informções da nova ferramenta, com exceção do ID, deverão estar contidas no corpo da requisição
+
++ Request (application/json)
+    
+    + Body
+
+            {
+                "title": "hotel",
+                "link": "https://github.com/typicode/hotel",
+                "description": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
+                "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id":"3230023"
+                "title": "hotel",
+                "link": "https://github.com/typicode/hotel",
+                "description": "Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.",
+                "tags":["node", "organizing", "webapps", "domain", "developer", "https", "proxy"]
+            }
+            
+## Remover ferramenta [DELETE /{id}]
+Remove uma ferramenta
+
++ Parameters
+    + id (string, required) ... Representa o id da ferramenta que será removida
+    
++ Response 200 (application/json)
+
+    + Body
+    
+            {}
+            
+# Group Authentication
+
+## Autenticação [/signin]
+### Fazer login[GET]
+Realiza autenticação na tools-api. É opcional. Uma vez realizada à autenticação, um token deverá ser enviado junto das requisições para /tools
+
+        
++ Response 201 (application/json)
+    
+    + Body 
+        
+            {
+                "token": "Token gerado"
+            }
+    

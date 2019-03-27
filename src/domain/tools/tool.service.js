@@ -1,24 +1,29 @@
-const Tools = require("./tool.schema");
+const toolsRepository = require("./tool.repository");
 
 class ToolsService {
   async create(tool) {
-    const toolStored = await Tools.create(tool);
+    const toolStored = await toolsRepository.create(tool);
     return toolStored;
   }
 
-  async update(tool){
-    const { id } = tool;
-    const toolUpdated = await Tools.findOneAndUpdate(id, tool, {new:true});
+  async update(tool) {
+    const toolUpdated = await toolsRepository.update(tool);
     return toolUpdated;
   }
 
-  async list(){
-    const toolsList = await Tools.find();
+  async findByTag(tag) {
+    const toolsList = await toolsRepository.findByTag(tag)
     return toolsList;
   }
 
-  async delete(id){
-    Tools.findByIdAndRemove(id);
+  async list() {
+    const toolsList = await toolsRepository.list();
+    return toolsList;
+  }
+
+  async delete(id) {
+    const storedTool = await toolsRepository.delete(id);
+    return storedTool;
   }
 }
 

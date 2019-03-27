@@ -26,5 +26,9 @@ const ToolSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+ToolSchema.statics.findByTag = async tag => {
+  return mongoose.model("Tools").find({tags:tag});
+}
+
 const Tools = mongoose.model("Tools", ToolSchema);
 module.exports = Tools;

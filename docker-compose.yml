@@ -1,0 +1,19 @@
+version: '3'
+services: 
+  mongo-database:
+    container_name: mongo-database
+    image: mongo
+    ports:
+      - '27017:27017'
+      
+  vuttr-api:
+    container_name: vuttr-api
+    environment: 
+      - MONGODB_URI=mongodb://mongo-database/vuttrdb
+      - SECRET=mysecret
+      - AUTH_MODE=true
+    build: .
+    ports: 
+      - "3000:3000"
+    links:
+      - mongo-database
