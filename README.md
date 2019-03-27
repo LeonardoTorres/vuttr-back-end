@@ -27,7 +27,7 @@ There is only one test created
 > $ yarn test
 
 # Env (Optional)
-It's possible to set some environment variables values, see below.
+It's possible to set some environment variables values in .env file, see below.
 
 * PORT - Default 3000.
 * SECRET - Private key to generate Jwt Token.
