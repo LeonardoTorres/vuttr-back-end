@@ -17,7 +17,7 @@ You need to have NodeJS, git and mongodb installed.
 > $ git clone https://github.com/LeonardoTorres/vuttr-back-end.git \
 > $ cd vuttr-back-end\
 > $ yarn\
-> $ yarn start:dev # run with nodemon\
+> $ yarn start:dev  # run with nodemon\
 
 Your app should now be running on localhost:3000
 
@@ -41,8 +41,9 @@ Authentication is disabled by default. To enable it, set AUTH_MODE to true and g
 It's possible run Vuttr API as a Docker container. For instructions about how to install docker, please visit [Docker documentation](https://docs.docker.com/install/). For instructions about how to install docker compose, please visit [Docker compose](https://docs.docker.com/compose/install/). No need to install mongodb in this case.
 
 ## Getting Start
-> $ git clone https://github.com/LeonardoTorres/vuttr-back-end.git\
-> docker-compose up --build
+> $ git clone https://github.com/LeonardoTorres/vuttr-back-end.git \
+> $ cd vuttr-back-end \
+> $ docker-compose up --build  # or sudo docker-compose up --build
 
 
 
