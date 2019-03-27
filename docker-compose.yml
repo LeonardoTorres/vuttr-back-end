@@ -10,8 +10,8 @@ services:
     container_name: vuttr-api
     environment: 
       - MONGODB_URI=mongodb://mongo-database/vuttrdb
-      - SECRET=mysecret
-      - AUTH_MODE=true
+     # - SECRET=mysecret
+     # - AUTH_MODE=true
     build: .
     ports: 
       - "3000:3000"
